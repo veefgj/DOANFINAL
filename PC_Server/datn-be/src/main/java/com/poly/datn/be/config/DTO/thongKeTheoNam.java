@@ -1,12 +1,14 @@
 package com.poly.datn.be.config.DTO;
 
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 @Data
+@Getter
+@Setter
 public class thongKeTheoNam {
-    String month;
-
-    String monthlyRevenue;
-
-    String money;
+    private int month;
+    private double monthlyRevenue;
+//    private double money;
 }

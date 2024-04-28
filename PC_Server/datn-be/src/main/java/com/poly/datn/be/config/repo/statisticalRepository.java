@@ -10,6 +10,7 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Map;
 
 @Repository
 public interface statisticalRepository extends JpaRepository<Order, Long> {
@@ -33,18 +34,18 @@ public interface statisticalRepository extends JpaRepository<Order, Long> {
             "ORDER BY " +
             "    total_quantity DESC " +
             "LIMIT 5", nativeQuery = true)
-    List<thongKeTheoThang> thongKeTheoThang(@Param("month") int month, @Param("year") int year);
+    List<Map<String, Object>> thongKeTheoThang(@Param("month") int month, @Param("year") int year);
 
     @Query(value = "SELECT " +
-            "    MONTH(o.create_date) AS month, " +
-            "    SUM(o.total) AS monthly_revenue " +
+            "    MONTH(create_date) AS month, " +
+            "    SUM(total) AS monthlyRevenue " +
             "FROM " +
             "    orders o " +
             "WHERE " +
-            "    YEAR(o.create_date) = :year " +
+            "    YEAR(o.create_date)=:year " +
             "GROUP BY " +
             "    MONTH(o.create_date)", nativeQuery = true)
-    List<thongKeTheoNam> thongKeTheoNam(@Param("year") int year);
+    List<Map<String, Object>> thongKeTheoNam(@Param("year") int year);
 
     @Query(value = "SELECT " +
             "    DAY(o.create_date) AS day, " +
@@ -61,7 +62,7 @@ public interface statisticalRepository extends JpaRepository<Order, Long> {
             "    YEAR(o.create_date), " +
             "    MONTH(o.create_date), " +
             "    DAY(o.create_date)", nativeQuery = true)
-    List<thongKeTheoNgay> thongKetheoNgay(
+    List<Map<String, Object>> thongKetheoNgay(
             @Param("day") int day,
             @Param("month") int month,
             @Param("year") int year

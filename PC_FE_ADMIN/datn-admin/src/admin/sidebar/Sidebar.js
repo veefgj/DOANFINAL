@@ -61,6 +61,13 @@ const sidebar_items_1 = [
     modify: "/category-detail",
     icon: "bx bx-list-ol",
   },
+  {
+    display_name: "Thống kê",
+    route: "/statistical",
+    add: "/add-statistical",
+    modify: "/statistical-detail",
+    icon: "bx bx-list-ol",
+  },
 ];
 
 const sidebar_items_2 = [

@@ -31,6 +31,7 @@ import Detail from "./product/Detail";
 import Chat from "./chat/Chat";
 import SearchOrder from './pages/SearchOrder';
 import Error from "./error/Error";
+import { Statistical } from "./statistical/statistical";
 
 const Routes = () => {
   const [year, setYear] = useState();
@@ -129,6 +130,9 @@ const Routes = () => {
       </Route>
       <Route path={`/search/:id`} exact>
        <SearchOrder></SearchOrder>
+      </Route>
+      <Route path={`/statistical`} exact>
+       <Statistical></Statistical>
       </Route>
       <Route path={`/error-page`} exact>
        <Error></Error>

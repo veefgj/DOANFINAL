@@ -16,8 +16,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDate;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 @Service
 public class ProductServiceImpl implements ProductService {
@@ -263,5 +262,36 @@ public class ProductServiceImpl implements ProductService {
         } catch (Exception exception) {
             throw new Exception(exception.getMessage());
         }
+    }
+
+    @Override
+    public List<Product> getProductByAttribute(Long id) {
+        Optional<Product> optionalProduct = productRepo.findById(id);
+        if (optionalProduct.isPresent()) {
+            Product referenceProduct = optionalProduct.get();
+
+            Collection<Attribute> referenceAttributes = referenceProduct.getAttributes();
+
+            List<Product> matchingProducts = new ArrayList<>();
+
+            for (Product product : productRepo.findAll()) {
+                boolean isMatch = true;
+
+                for (Attribute referenceAttribute : referenceAttributes) {
+                    if (!product.getAttributes().contains(referenceAttribute)) {
+                        isMatch = false;
+                        break;
+                    }
+                }
+
+                if (isMatch) {
+                    matchingProducts.add(product);
+                }
+            }
+
+            return matchingProducts;
+        }
+
+        return Collections.emptyList();
     }
 }

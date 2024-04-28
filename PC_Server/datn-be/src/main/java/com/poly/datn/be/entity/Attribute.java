@@ -10,6 +10,7 @@ import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.Collection;
 
+@Data
 @Entity
 @Table(name = "Attribute")
 public class Attribute {

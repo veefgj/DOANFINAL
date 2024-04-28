@@ -10,6 +10,7 @@ import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.Collection;
 
+@Data
 @Entity
 @Table(name = "products")
 public class Product {
@@ -17,7 +18,7 @@ public class Product {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private Long id;
-    @Column(name = "name", nullable = false, length =255)
+    @Column(name = "name", nullable = false, length = 255)
     private String name;
     @Column(name = "code", nullable = false, unique = true, length = 20)
     private String code;
@@ -47,7 +48,6 @@ public class Product {
     @OneToMany(mappedBy = "product", fetch = FetchType.LAZY)
     @JsonIgnore
     private Collection<Notification> notifications;
-
 
 
     public Long getId() {

@@ -27,11 +27,13 @@ import java.util.Arrays;
 @EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     private static final String[] PUBLIC_MATCHERS = {
-            "/api/site/**"
+            "/api/site/**", "/api/admin/**"
     };
+
     private static final String[] PRIVATE_ADMIN = {
             "/api/admin/**"
     };
+
     @Autowired
     CustomUserDetailService customUserDetailService;
 

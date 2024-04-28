@@ -114,9 +114,4 @@ public class ProductApi {
     public ResponseEntity<?> findAll() {
         return new ResponseEntity<>(productService.findAll(), HttpStatus.OK);
     }
-
-    @GetMapping("matching-product")
-    public ResponseEntity<?> matchingProduct(@RequestParam("id") Long id) {
-        return new ResponseEntity<>(productService.getProductByAttribute(id), HttpStatus.OK);
-    }
 }

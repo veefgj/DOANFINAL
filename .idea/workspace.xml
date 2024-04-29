@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3b9ce880-3870-4c40-8223-e037ef4486bb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/PC_Server/.idea/jpa-buddy.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PC_FE_ADMIN/datn-admin/src/admin/Routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/PC_FE_ADMIN/datn-admin/src/admin/Routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PC_FE_ADMIN/datn-admin/src/admin/sidebar/Sidebar.js" beforeDir="false" afterPath="$PROJECT_DIR$/PC_FE_ADMIN/datn-admin/src/admin/sidebar/Sidebar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PC_Server/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/PC_Server/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PC_Server/datn-be/src/main/java/com/poly/datn/be/api/StatisticalAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/PC_Server/datn-be/src/main/java/com/poly/datn/be/api/StatisticalAPI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PC_Server/datn-be/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/PC_Server/datn-be/src/main/resources/application.properties" afterDir="false" />
-    </list>
+    <list default="true" id="3b9ce880-3870-4c40-8223-e037ef4486bb" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -22,12 +15,12 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">

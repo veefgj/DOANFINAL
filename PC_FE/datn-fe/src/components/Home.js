@@ -95,7 +95,7 @@ const Home = (props) => {
           </div>
         </div>
       </div> */}
-      <img src={second} alt="" width="1526px" id="banner-img"/>
+      <img src={second} alt="" width="100%" id="banner-img"/>
       <div className="col-15 container-fluid card">
         <h4 className="title text-primary">Sản phẩm</h4>
         <div className="row padding d-flex">

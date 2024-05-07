@@ -13,7 +13,7 @@ import java.util.List;
 public interface ProductService {
     Page<ResponseProductDto> getProducts(Boolean active, Pageable pageable);
 
-    Page<ResponseProductDto> getProducts(Pageable pageable);
+    Page<ResponseProductDto> getProducts1(Pageable pageable);
 
     Page<ResponseProductDto> getAllProductsByBrand(Boolean active, Long brand, Pageable pageable);
 

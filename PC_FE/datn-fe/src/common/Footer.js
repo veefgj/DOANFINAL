@@ -9,10 +9,10 @@ const Footer = () => {
               <div className="col-md-4">           
                 <hr className="light" />
                 <h5>Thông tin liên hệ</h5>
-                <p>Địa chỉ: Kiều chính( Cầu mây), Xuân Phương, Phú Bình, Thái Nguyên, Việt Nam </p>
-                <p>Điện thoại: 0967.810.888</p>
-                <p>Hotline: 035.909.3333</p>
-                <p>Email: maytinhtoanvu@gmail.com</p>
+                <p>Địa chỉ: Số 555, Xuân Phương, Phương Canh, Nam Từ Liêm, Hà Nội </p>
+                <p>Điện thoại: 0911.975.426</p>
+                <p>Hotline: 035.555.8333</p>
+                <p>Email: minhhiencomputer@gmail.com</p>
               </div>
               <div className="col-md-4">
                 <hr className="light" />
@@ -29,7 +29,7 @@ const Footer = () => {
               </div>
               <div className="col-12">
                 <hr className="light-100" />
-                <h5>© 2023 Máy tính & Phụ kiện </h5>
+                <h5>© 2024 Máy tính & Phụ kiện </h5>
               </div>
             </div>
           </div>

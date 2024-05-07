@@ -93,7 +93,7 @@ const Product = (props) => {
   const [brand1, setBrand1] = useState([]);
   const [price, setPrice] = useState([]);
   const [min, setMin] = useState(0);
-  const [max, setMax] = useState(10000000);
+  const [max, setMax] = useState(100000000000);
 
   var rows = new Array(total).fill(0).map((zero, index) => (
     <li className={page === index + 1 ? "page-item active" : "page-item"} key={index}>
@@ -172,7 +172,7 @@ const Product = (props) => {
       setMax(prices[temp[temp.length - 1]].max);
     } else {
       setMin(0);
-      setMax(10000000);
+      setMax(100000000000);
     }
     onChangePage(1);
   };
@@ -272,12 +272,9 @@ const Product = (props) => {
                   ))}
               </div>
             </div>
-          </div>
-        </div>
-
-        <div className="d-flex justify-content-center mt-5">
+            <div className="d-flex justify-content-center mt-5">
           <nav aria-label="Page navigation example">
-            <ul className="pagination offset-5">
+            <ul className="pagination">
               <li className={page === 1 ? "page-item disabled" : "page-item"}>
                 <button className="page-link" onClick={() => onChangePage(1)}>
                   First
@@ -292,6 +289,10 @@ const Product = (props) => {
             </ul>
           </nav>
         </div>
+          </div>
+        </div>
+
+       
       </div>
     </div>
   );

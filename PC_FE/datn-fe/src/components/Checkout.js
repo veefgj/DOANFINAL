@@ -9,6 +9,8 @@ import { getVoucherByCode } from "../api/VoucherApi";
 import Spinner from "./spinner/Spinner";
 import { Button } from "react-bootstrap";
 import Modal from "react-bootstrap/Modal";
+import { getPaypalPayment } from "../api/PaymenApi";
+
 
 const Checkout = (props) => {
   const [amount, setAmount] = useState();
@@ -48,7 +50,7 @@ const Checkout = (props) => {
     setText(value);
   };
   const onLoad = () => {
-    getAllProvince().then((resp) => setInfo(resp.data)).catch(error => console.log(error));
+    // getAllProvince().then((resp) => setInfo(resp.data)).catch(error => console.log(error));
     if (props.user) {
       getCartItemByAccountId(props.user.id).then((resp) => {
         setCart(resp.data.filter((item) => props.buy.includes(item.id + "")));
@@ -142,6 +144,8 @@ const Checkout = (props) => {
           };
           console.log(order);
 
+          
+
           createOrder(order)
             .then((resp) => {
               toast.success("Đặt hàng thành công");
@@ -165,7 +169,8 @@ const Checkout = (props) => {
       const order = {
         fullname: data.name,
         phone: data.phone,
-        address: `${data.address}, ${data.ward}, ${data.district}, ${data.province}`,
+        // address: `${data.address}, ${data.ward}, ${data.district}, ${data.province}`,
+        address: `${data.address}`,
         email: data.email,
         total: amount,
         note: data.note,
@@ -182,6 +187,15 @@ const Checkout = (props) => {
           },
         })),
       };
+
+      getPaypalPayment(order)
+          .then((resp) => {
+            props.clearHandler();
+            console.log("hello here");
+            console.log("respresp", resp)
+            history.push(resp.body);
+          })
+          .catch(() => history.push("/out-of-stock"));
 
       createOrder(order)
         .then((resp) => {

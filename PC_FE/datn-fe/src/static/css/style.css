@@ -139,8 +139,7 @@ hr.light {
   border: none;
   outline: none;
   color: var(--text-color);
-  padding: 0 16px;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   border-radius: 2px;
 }
 .mini-card{

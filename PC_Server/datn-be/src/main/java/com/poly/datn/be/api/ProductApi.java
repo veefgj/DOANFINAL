@@ -65,7 +65,7 @@ public class ProductApi {
         Sort sort = Sort.by(Sort.Direction.DESC, "modifyDate");
         Pageable pageable = PageRequest.of(page.orElse(1) - 1, size.orElse(8), sort);
         if (brand == 0) {
-            return new ResponseEntity<>(productService.getProducts(pageable), HttpStatus.OK);
+            return new ResponseEntity<>(productService.getProducts1(pageable), HttpStatus.OK);
         }
         return new ResponseEntity<>(productService.getAllProductsByBrand(brand, pageable), HttpStatus.OK);
     }

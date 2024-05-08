@@ -195,13 +195,13 @@ const Checkout = (props) => {
           })
           .catch(() => history.push("/out-of-stock"));
 
-      // createOrder(order)
-      //   .then((resp) => {
-      //     toast.success("Đặt hàng thành công");
-      //     props.clearHandler();
-      //     history.push(`/order/detail/${resp.data.encodeUrl}`);
-      //   })
-      //   .catch(() => history.push("/out-of-stock"));
+      createOrder(order)
+        .then((resp) => {
+          toast.success("Đặt hàng thành công");
+          props.clearHandler();
+          history.push(`/order/detail/${resp.data.encodeUrl}`);
+        })
+        .catch(() => history.push("/out-of-stock"));
     }
   };
 

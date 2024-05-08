@@ -15,13 +15,11 @@ import java.util.Optional;
 
 @Repository
 public interface ProductRepo extends JpaRepository<Product, Long> {
-    @Query("SELECT DISTINCT new com.poly.datn.be.domain.dto.ResponseProductDto(p.id, p.name, p.code, p.description, p.view, a.price," +
+    @Query("SELECT new com.poly.datn.be.domain.dto.ResponseProductDto(p.id, p.name, p.code, p.description, p.view, a.price," +
             " i.imageLink, p.brand.name, p.sale.discount, p.isActive) FROM Product p " +
             "inner join Attribute a on p.id = a.product.id " +
-            "inner join Image i on p.id = i.product.id where  i.name = :name and p.isActive = :active " +
-            "GROUP BY p.id, p.name, p.code, p.description, p.view, p.brand.name, p.isActive")
+            "inner join Image i on p.id = i.product.id where p.isActive = :active ")
     Page<ResponseProductDto> getAllProducts(
-            @Param("name") String name,
             @Param("active") Boolean active,
             Pageable pageable);
 

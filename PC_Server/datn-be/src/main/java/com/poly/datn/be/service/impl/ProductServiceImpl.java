@@ -43,7 +43,7 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public Page<ResponseProductDto> getProducts(Boolean active, Pageable pageable) {
-        return productRepo.getAllProducts(ProductConst.PRODUCT_MAIN_IMAGE, active, pageable);
+        return productRepo.getAllProducts(active, pageable);
     }
 
     @Override

@@ -191,19 +191,17 @@ const Checkout = (props) => {
       getPaypalPayment(order)
           .then((resp) => {
             props.clearHandler();
-            console.log("hello here");
-            console.log("respresp", resp)
-            history.push(resp.body);
+            window.location.href = resp.data
           })
           .catch(() => history.push("/out-of-stock"));
 
-      createOrder(order)
-        .then((resp) => {
-          toast.success("Đặt hàng thành công");
-          props.clearHandler();
-          history.push(`/order/detail/${resp.data.encodeUrl}`);
-        })
-        .catch(() => history.push("/out-of-stock"));
+      // createOrder(order)
+      //   .then((resp) => {
+      //     toast.success("Đặt hàng thành công");
+      //     props.clearHandler();
+      //     history.push(`/order/detail/${resp.data.encodeUrl}`);
+      //   })
+      //   .catch(() => history.push("/out-of-stock"));
     }
   };
 

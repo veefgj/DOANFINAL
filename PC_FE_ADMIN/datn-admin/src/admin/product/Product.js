@@ -110,7 +110,9 @@ const Product = () => {
                         {/* <th>{item.brand}</th> */}
                         <th>
                           {" "}
-                          <img className="img-fluid" style={{ width: "100px", height: "100px" }} src={require(`../../static/images/${item.image}`)} alt="" />
+                          <img className="img-fluid" style={{ width: "100px", height: "100px" }} src={require(`../../static/images/${item?.image}`)} alt="" />
+                          {/* <img className="img-fluid" style={{ width: "100px", height: "100px" }} src={`/static/images/${item?.image}`} alt="" /> */}
+
                         </th>
                         <th>{item.active ? "Đang bán" : "Dừng bán"}</th>
                         <th>

@@ -52,7 +52,13 @@ public interface ProductRepo extends JpaRepository<Product, Long> {
 
     @Query("SELECT new com.poly.datn.be.domain.dto.ResponseProductDto(p.id, p.name, p.code, p.description, p.view, a.price, i.imageLink, p.brand.name, p.sale.discount, p.isActive) FROM Product p inner join ProductCategory c on p.id = c.product.id inner join Brand b on p.brand.id = b.id " +
             "inner join Attribute a on p.id = a.product.id " +
-            "inner join Image i on p.id = i.product.id where a.size = :size and i.name = :name and p.isActive = :active and c.category.id IN :category and p.brand.id in :brand and a.price between :min and :max")
+            "inner join Image i on p.id = i.product.id where " +
+            "a.size = :size and " +
+            "i.name = :name or " +
+            "p.isActive = :active and " +
+            "c.category.id IN :category and " +
+            "p.brand.id in :brand and " +
+            "a.price between :min and :max")
     Page<ResponseProductDto> filterAllProducts(@Param("size") Integer size,
                                                @Param("name") String name,
                                                @Param("active") Boolean active,

@@ -126,7 +126,7 @@ export const Statistical = () => {
             </div>
 
             <div className="mb-5">
-                Số lưởng sản phẩm (Theo tháng):
+                Số lượng sản phẩm (Theo tháng):
                 <div>
                   <input type="number" placeholder="Nhập năm" value={yearOfMonth} onChange={(e) => setYearOfMonth(e.target.value)}/>
                   <input type="number" placeholder="Nhập tháng" value={month} onChange={(e) => setMonth(e.target.value)}/>
@@ -137,7 +137,7 @@ export const Statistical = () => {
             </div>
 
             <div >
-                Tổng thu nhập theo ngày (Theo tháng):
+                Tổng thu nhập (Theo ngày):
                 <div>
                   <input type="date" placeholder="Nhập năm" onChange={(e) => setDate(e.target.value)}/>
                   <button onClick={() => onSearchDate()}>Tìm kiếm</button>
